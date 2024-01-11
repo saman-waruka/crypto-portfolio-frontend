@@ -1,7 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router";
+
 function App() {
   return (
     <>
-      <div className="text-3xl font-bold underline">initial project</div>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </>
   );
 }
