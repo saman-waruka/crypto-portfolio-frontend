@@ -21,6 +21,7 @@ export type UserInformationContextType = {
     signInResponse: PostSignInResponse,
     onGetProfileSuccess?: () => void
   ) => void;
+  logout: () => void;
 };
 
 export type AuthProviderType = ({

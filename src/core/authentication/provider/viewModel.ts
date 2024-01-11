@@ -1,23 +1,21 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   accessTokenDecode,
+  clearToken,
   getAccessToken,
   getUserInformation,
   saveAccessToken,
   saveUserInformation,
 } from "../function";
 
-// import AuthRemote from "../../../pages/user/services/remote/authRemote";
 import { PostSignInResponse } from "../../../pages/user/services/response";
 import type { UserInformation } from "../type";
-// import AuthRepository from "../../../pages/user/services/remote/authRepository";
 import UserRepository from "../../../pages/user/services/remote/userRepository";
 import UserRemote from "../../../pages/user/services/remote/user.Remote";
 
 function useViewModel() {
   const [userInformation, setUserInformation] = useState(getUserInformation());
   const [accessToken, setAccessToken] = useState(getAccessToken() ?? "");
-  // const authRepository = new AuthRepository(new AuthRemote());
   const userRepository = new UserRepository(new UserRemote());
   const accessTokenPayload = accessTokenDecode(getAccessToken() ?? "");
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
@@ -58,11 +56,17 @@ function useViewModel() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+    clearToken();
+  }, []);
+
   return {
     isLoggedIn,
     accessToken,
     userInformation,
     login,
+    logout,
   };
 }
 

@@ -3,7 +3,8 @@ import type { AuthProviderType } from "./../type";
 import useViewModel from "./viewModel";
 
 export const AuthProvider: AuthProviderType = ({ children }) => {
-  const { isLoggedIn, accessToken, userInformation, login } = useViewModel();
+  const { isLoggedIn, accessToken, userInformation, login, logout } =
+    useViewModel();
 
   return (
     <UserInformationContext.Provider
@@ -12,6 +13,7 @@ export const AuthProvider: AuthProviderType = ({ children }) => {
         accessToken,
         userInformation,
         login,
+        logout,
       }}
     >
       {children}
