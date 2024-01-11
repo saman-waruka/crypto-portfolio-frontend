@@ -13,6 +13,7 @@ export default {
         "UI-DARK-PURPLE": "#6F6AA3",
         "UI-BORDER": "#dcd9ff29",
         "UI-SLATE": "#27293a",
+        "UI-RED": "#dc4242",
       },
     },
   },

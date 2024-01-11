@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { PUBLIC_ROUTE } from "./constants/routePaths";
+import { PUBLIC_ROUTE } from "./core/constants/routePaths";
 import Login from "./pages/login/Login";
 
 const Router = () => {
