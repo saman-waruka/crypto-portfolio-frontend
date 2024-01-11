@@ -40,7 +40,6 @@ function useViewModel() {
     signInResponse: PostSignInResponse,
     onGetProfileSuccess?: () => void
   ) => {
-    console.log("signInResponse ", signInResponse);
     const { token } = signInResponse;
     saveAccessToken(token);
     getProfile(token, (user) => {
