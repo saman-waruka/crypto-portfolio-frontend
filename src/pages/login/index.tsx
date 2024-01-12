@@ -18,12 +18,7 @@ const Login = () => {
           className="h-[100vh] flex flex-col justify-center"
         >
           <div className="w-[350px] mx-auto flex flex-col">
-            <img
-              src={LogoFull}
-              alt="CT logo"
-              width={100}
-              className="self-center"
-            />
+            <LogoFull className=" self-center" width={100} height={100} />
             <div className="text-center mt-10">
               <Field
                 name="email"

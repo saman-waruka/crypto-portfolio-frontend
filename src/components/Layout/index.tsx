@@ -28,8 +28,6 @@ const Layout = () => {
 
   return (
     <div>
-      {/* A "layout route" is a good place to put markup you want to
-      share across all the pages on your site, like navigation. */}
       <nav className="sticky top-0 bg-UI-BLACK text-xl">
         <ul className="flex flex-row justify-end space-x-5 pr-5 h-10">
           {MENU_LIST.map(({ path, name }, id) => (
@@ -42,10 +40,6 @@ const Layout = () => {
           </MenuListItem>
         </ul>
       </nav>
-
-      {/* An <Outlet> renders whatever child route is currently active,
-      so you can think about this <Outlet> as a placeholder for
-      the child routes we defined above. */}
       <div>
         <Outlet />
       </div>
