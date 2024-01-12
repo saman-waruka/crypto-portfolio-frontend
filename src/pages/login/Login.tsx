@@ -31,7 +31,7 @@ const Login = () => {
                 name="password"
                 component={PasswordInput}
                 placeholder="Password"
-                // validate={validate.password}
+                validate={validate.password}
                 inputClassName="placeholder-UI-DARK-PURPLE bg-UI-SLATE focus:border-0 border border-UI-BORDER px-6 h-12 rounded-3xl w-full text-UI-WHITE"
               />
             </div>
