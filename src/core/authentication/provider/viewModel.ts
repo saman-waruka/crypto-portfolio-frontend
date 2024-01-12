@@ -10,7 +10,7 @@ import {
 
 import { PostSignInResponse } from "../../../pages/user/services/response";
 import type { UserInformation } from "../type";
-import UserRepository from "../../../pages/user/services/remote/userRepository";
+import UserRepository from "../../../pages/user/services/repository/userRepository";
 import UserRemote from "../../../pages/user/services/remote/user.Remote";
 
 function useViewModel() {

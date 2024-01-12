@@ -1,7 +1,7 @@
 import { FieldRenderProps } from "react-final-form";
 import Loading from "../../Loading";
 import useViewModel from "./viewModel";
-import { EyeOffIcon, EyeOnIcon } from "../../icons";
+import { EyeOffIcon, EyeOnIcon } from "../../Icons";
 
 function PasswordInput({
   input,

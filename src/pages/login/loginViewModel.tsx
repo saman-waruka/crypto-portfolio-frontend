@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { PostSignInResponse } from "../user/services/response";
 import AuthRemote from "../user/services/remote/authRemote";
-import AuthRepository from "../user/services/remote/authRepository";
+import AuthRepository from "../user/services/repository/authRepository";
 import { UserInformationContext } from "../../core/authentication/context";
 import { LoginData } from "./type";
 

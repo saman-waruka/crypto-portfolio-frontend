@@ -1,6 +1,6 @@
 import type { GetProfileResponse } from "../response";
 import type { Observable } from "rxjs";
-import UserRemote from "./user.Remote";
+import UserRemote from "../remote/user.Remote";
 
 class UserRepository {
   private remote: UserRemote;

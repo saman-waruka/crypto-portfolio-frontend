@@ -5,6 +5,8 @@ export const enum PUBLIC_ROUTE {
 
 export const enum PRIVATE_ROUTE {
   HOME = "/",
+  PORTFOLIO = "/portfolio",
+  PROFILE = "/profile",
 }
 
 export const enum BASE_ROUTE {

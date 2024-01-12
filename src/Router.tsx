@@ -1,9 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { PRIVATE_ROUTE, PUBLIC_ROUTE } from "./core/constants/routePaths";
-import Login from "./pages/login/Login";
+import Login from "./pages/login";
 import { useContext } from "react";
 import { UserInformationContext } from "./core/authentication/context";
-import Welcome from "./pages/Welcome";
+import Dashboard from "./pages/dashboard";
+import Layout from "./components/Layout";
+import Portfolio from "./pages/portfolio";
+import Profile from "./pages/profile";
 
 const Router = () => {
   const { isLoggedIn } = useContext(UserInformationContext);
@@ -17,8 +20,15 @@ const Router = () => {
 
   const PrivateRoutes = () => (
     <Routes>
-      <Route path={PRIVATE_ROUTE.HOME} element={<Welcome />} />
-      <Route path="*" element={<Navigate to={PRIVATE_ROUTE.HOME} replace />} />
+      <Route path="/" element={<Layout />}>
+        <Route index path={PRIVATE_ROUTE.HOME} element={<Dashboard />} />
+        <Route path={PRIVATE_ROUTE.PORTFOLIO} element={<Portfolio />} />
+        <Route path={PRIVATE_ROUTE.PROFILE} element={<Profile />} />
+        <Route
+          path="*"
+          element={<Navigate to={PRIVATE_ROUTE.HOME} replace />}
+        />
+      </Route>
     </Routes>
   );
 

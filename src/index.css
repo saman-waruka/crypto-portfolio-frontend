@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-UI-BLACK text-base font-normal;
+  @apply bg-UI-BLACK text-base font-normal text-UI-WHITE;
+
 }
 
 
