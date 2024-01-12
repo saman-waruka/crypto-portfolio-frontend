@@ -4,6 +4,7 @@ import TextInput from "../../components/Form/TextInput";
 import PasswordInput from "../../components/Form/PasswordInput";
 import useLoginViewModel from "./loginViewModel";
 import { ToastContainer } from "react-toastify";
+import { LogoFull } from "../../components/Logo";
 
 const Login = () => {
   const { submitForm } = useLoginViewModel();
@@ -17,7 +18,13 @@ const Login = () => {
           className="h-[100vh] flex flex-col justify-center"
         >
           <div className="w-[350px] mx-auto flex flex-col">
-            <div className="text-center">
+            <img
+              src={LogoFull}
+              alt="CT logo"
+              width={100}
+              className="self-center"
+            />
+            <div className="text-center mt-10">
               <Field
                 name="email"
                 component={TextInput}

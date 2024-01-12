@@ -16,7 +16,7 @@ export type UserInformation = GetProfileResponse;
 export type UserInformationContextType = {
   isLoggedIn: boolean;
   accessToken: string;
-  userInformation: UserInformation | object;
+  userInformation: UserInformation;
   login: (
     signInResponse: PostSignInResponse,
     onGetProfileSuccess?: () => void
