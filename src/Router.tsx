@@ -7,6 +7,7 @@ import Dashboard from "./pages/dashboard";
 import Layout from "./components/Layout";
 import Portfolio from "./pages/portfolio";
 import Profile from "./pages/profile";
+import Register from "./pages/register";
 
 const Router = () => {
   const { isLoggedIn } = useContext(UserInformationContext);
@@ -14,6 +15,7 @@ const Router = () => {
   const PublicRoutes = () => (
     <Routes>
       <Route path={PUBLIC_ROUTE.LOGIN} element={<Login />} />
+      <Route path={PUBLIC_ROUTE.REGISTER} element={<Register />} />
       <Route path="*" element={<Navigate to={PUBLIC_ROUTE.LOGIN} replace />} />
     </Routes>
   );

@@ -15,7 +15,7 @@ class AuthRemote {
   };
 
   postSignUp = (values: PostSignUpRequestBody) => {
-    return this.http.post<PostSignUpResponse>(`/auth/sign-up`, values);
+    return this.http.post<PostSignUpResponse>(`/auth/signup`, values);
   };
 }
 export default AuthRemote;

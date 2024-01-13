@@ -1,12 +1,12 @@
 import { Field, Form } from "react-final-form";
+import { LogoFull } from "../../components/Logo";
 import { validate } from "../../core/form/validator";
+import useSignUpViewModel from "./registerViewModel";
 import TextInput from "../../components/Form/TextInput";
 import PasswordInput from "../../components/Form/PasswordInput";
-import useLoginViewModel from "./loginViewModel";
-import { LogoFull } from "../../components/Logo";
 
-const Login = () => {
-  const { submitForm } = useLoginViewModel();
+const Register = () => {
+  const { submitForm } = useSignUpViewModel();
 
   return (
     <Form
@@ -29,6 +29,15 @@ const Login = () => {
             </div>
             <div className="mt-3 text-center">
               <Field
+                name="name"
+                component={TextInput}
+                placeholder="Name"
+                validate={validate.required}
+                inputClassName="placeholder-UI-DARK-PURPLE bg-UI-SLATE focus:border-0 border border-UI-BORDER px-6 h-12 rounded-3xl w-full text-UI-WHITE"
+              />
+            </div>
+            <div className="mt-3 text-center">
+              <Field
                 name="password"
                 component={PasswordInput}
                 placeholder="Password"
@@ -41,7 +50,7 @@ const Login = () => {
               className="rounded-3xl w-full mt-8 bg-UI-BLUE h-12 text-UI-WHITE disabled:bg-slate-700 disabled:cursor-not-allowed disabled:text-slate-950"
               disabled={submitting || pristine || invalid}
             >
-              Sign In
+              Register
             </button>
           </div>
         </form>
@@ -50,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
