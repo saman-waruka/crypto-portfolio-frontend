@@ -4,9 +4,12 @@ import { validate } from "../../core/form/validator";
 import useSignUpViewModel from "./registerViewModel";
 import TextInput from "../../components/Form/TextInput";
 import PasswordInput from "../../components/Form/PasswordInput";
+import FormErrorMessage from "../../components/Form/ErrorMessage";
+import { Link } from "react-router-dom";
+import { PUBLIC_ROUTE } from "../../core/constants/routePaths";
 
 const Register = () => {
-  const { submitForm } = useSignUpViewModel();
+  const { submitForm, errorMessage } = useSignUpViewModel();
 
   return (
     <Form
@@ -45,6 +48,15 @@ const Register = () => {
                 inputClassName="placeholder-UI-DARK-PURPLE bg-UI-SLATE focus:border-0 border border-UI-BORDER px-6 h-12 rounded-3xl w-full text-UI-WHITE"
               />
             </div>
+            <Link
+              to={PUBLIC_ROUTE.LOGIN}
+              className="mt-2 text-slate-400 w-fit self-end mr-4"
+            >
+              Sign In
+            </Link>
+            {errorMessage && (
+              <FormErrorMessage>{errorMessage}</FormErrorMessage>
+            )}
             <button
               type="submit"
               className="rounded-3xl w-full mt-8 bg-UI-BLUE h-12 text-UI-WHITE disabled:bg-slate-700 disabled:cursor-not-allowed disabled:text-slate-950"
