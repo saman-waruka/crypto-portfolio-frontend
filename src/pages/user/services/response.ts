@@ -6,7 +6,7 @@ export type GetProfileResponse = {
   id: number;
   email: string;
   name: string;
-  createdAt?: Date;
+  created_at?: Date;
 };
 
 export type PostSignUpResponse = {
