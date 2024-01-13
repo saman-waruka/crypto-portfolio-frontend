@@ -40,7 +40,7 @@ const Layout = () => {
           </MenuListItem>
         </ul>
       </nav>
-      <div>
+      <div className="py-10">
         <Outlet />
       </div>
     </div>
