@@ -1,5 +1,8 @@
 import Rxios from "../../../core/Rxios";
-import { PostAddToPortfolioResponse } from "../response";
+import {
+  GetListPortfolioResponse,
+  PostAddToPortfolioResponse,
+} from "../response";
 import { PostAddToPortfolioBody } from "../types";
 
 class PortfolioRemote {
@@ -8,11 +11,23 @@ class PortfolioRemote {
   });
 
   postAddToPortfolio = (token: string, data: PostAddToPortfolioBody) => {
-    return this.http.post<PostAddToPortfolioResponse>(`/portfolio`, data, {
+    return this.http.post<PostAddToPortfolioResponse>("/portfolio", data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+  };
+
+  getListPortfolio = (token: string) => {
+    return this.http.get<GetListPortfolioResponse>(
+      "/portfolio",
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
   };
 }
 export default PortfolioRemote;

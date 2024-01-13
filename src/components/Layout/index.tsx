@@ -1,10 +1,8 @@
-import { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import { UserInformationContextType } from "../../core/authentication/type";
-import { UserInformationContext } from "../../core/authentication/context";
 import { PRIVATE_ROUTE } from "../../core/constants/routePaths";
 import MenuItem from "./components/MenuItem";
 import MenuListItem from "./components/MenuListItem";
+import LogOutButton from "./components/LogoutButton";
 
 const MENU_LIST = [
   {
@@ -22,10 +20,6 @@ const MENU_LIST = [
 ];
 
 const Layout = () => {
-  const { logout } = useContext<UserInformationContextType>(
-    UserInformationContext
-  );
-
   return (
     <div className="relative">
       <nav className="sticky top-0 bg-UI-BLACK text-xl z-10">
@@ -34,9 +28,7 @@ const Layout = () => {
             <MenuItem key={id} path={path} name={name} />
           ))}
           <MenuListItem>
-            <button onClick={logout} className="px-4 rounded-3xl mx-auto w-fit">
-              Logout
-            </button>
+            <LogOutButton />
           </MenuListItem>
         </ul>
       </nav>
