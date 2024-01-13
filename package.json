@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "axios": "^1.6.5",
     "final-form": "^4.20.10",
     "jwt-decode": "^4.0.0",

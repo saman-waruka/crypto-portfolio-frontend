@@ -87,4 +87,13 @@ export const validate = {
     passwordKey: "password",
     confirmPasswordKey: "confirm_password",
   }),
+
+  positiveNumber: (value: string) => {
+    const schema = yup.number().positive().required();
+    try {
+      schema.validateSync(value);
+    } catch (e: unknown) {
+      return (e as ErrorType).errors;
+    }
+  },
 };
