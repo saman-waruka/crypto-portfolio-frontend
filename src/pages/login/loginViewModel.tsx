@@ -17,12 +17,10 @@ const useLoginViewModel = () => {
     setIsWaitingForResponse(true);
     authRepository.signIn(values.email, values.password).subscribe({
       next: (result: PostSignInResponse) => {
-        console.log("signIn  Result ", result);
         login(result);
       },
       error: (err: { response: unknown }) => {
         console.log(" signIn err", err?.response);
-
         setIsWaitingForResponse(false);
       },
     });

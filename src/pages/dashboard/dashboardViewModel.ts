@@ -19,7 +19,6 @@ function useDashboardViewModel() {
   );
 
   const getCryptocurrencyList = useCallback(() => {
-    console.log(" getCryptocurrencyList ");
     setIsWaitingForResponse(true);
     cryptocurrencyRepository.getListCryptocurrency(accessToken).subscribe({
       next: (response: GetListCryptocurrencyResponse) => {
