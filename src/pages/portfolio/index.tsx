@@ -39,7 +39,9 @@ const Portfolio = () => {
                   </div>
                 </td>
                 <td className="px-6 py-4 text-right">{portfolio.amount}</td>
-                <td className="px-6 py-4">{portfolio.total_price}</td>
+                <td className="px-6 py-4">
+                  {portfolio.total_price.toFixed(2)}
+                </td>
                 <td
                   className={`px-6 py-4 ${
                     portfolio.profit > 0 ? " text-green-600" : "text-red-600"
